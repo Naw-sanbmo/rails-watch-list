@@ -1,9 +1,18 @@
+<div class="card text-success">
+  <div class="position-relative">
+    <img src="https://bagalefilms.com/wp-content/uploads/2019/02/movie-abc.png" class="card-img" alt="Product">
+    <div class="position-absolute top-50 start-50 translate-middle text-center bg-dark bg-opacity-50 px-3 py-2">
+      <h2 class="card-title mb-2">"Bringing you the most unforgettable <strong> movies,</strong> handpicked just for you"</strong></h2>
+      <h4 class="mb-0 mt-3"><%= link_to 'Make your list now', new_list_path, class:'text-decoration-none'%></h4>
+    </div>
+  </div>
+</div>
+
+</div>
 <div class="container">
   <ul>
     <% @lists.each do |list| %>
-     <li><%= link_to list.name, list_path(list)  %></li>
-
+     <li><%= link_to list.name, list_path(list) %></li>
     <% end %>
   </ul>
-
 </div>
