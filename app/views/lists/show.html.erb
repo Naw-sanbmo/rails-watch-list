@@ -1,13 +1,15 @@
 
-
-<div class="container">
+<div class="card" style="width: 18rem;">
   <%= @list.name %>
+  <img src="https://i.ytimg.com/vi/0_QpeMg6Hm4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCKbQGVGxm61UD3sM0VDuQyWSm4Kg" class="card-img-top" alt="...">
   <% @list.bookmarks.each do |bookmark| %>
-  <p><%= bookmark.movie.title %></p>
-  <p><%= bookmark.comment %></p>
-  <p><%= link_to 'Create a bookmark', new_list_bookmark_path(bookmark) %></p>
-  <p><%= link_to "❌ delete bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure"}%></p>
-  <p><%= link_to "All list", lists_path %></p>
-  <% end %>
+    <div class="card-body">
+      <h6 class="card-title">Title 🎞️<%= bookmark.movie.title %></h6>
+      <p class="card-text">Comment👍<%= bookmark.comment %></p>
+      <p><%= link_to "Delete bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure"}%></p>
+    <% end %>
+     <p><%= link_to "Back to all list", lists_path %></p>
+  <p><%= link_to 'Create a bookmark', new_list_bookmark_path(@list) %></p>
+  </div>
 </div>
-
+<%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
