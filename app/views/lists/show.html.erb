@@ -1,15 +1,24 @@
-
-<div class="card" style="width: 18rem;">
-  <%= @list.name %>
-  <img src="https://i.ytimg.com/vi/0_QpeMg6Hm4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCKbQGVGxm61UD3sM0VDuQyWSm4Kg" class="card-img-top" alt="...">
-  <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-body">
-      <h6 class="card-title">Title 🎞️<%= bookmark.movie.title %></h6>
-      <p class="card-text">Comment👍<%= bookmark.comment %></p>
-      <p><%= link_to "Delete bookmark", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure"}%></p>
-    <% end %>
-     <p><%= link_to "Back to all list", lists_path %></p>
-  <p><%= link_to 'Create a bookmark', new_list_bookmark_path(@list) %></p>
+<div class="container">
+  <div class="banner rounded" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0823B7ECB0D0D3174820B192D69A322EB757110F65A3C9E903DC8EF5E838FF48/scale?width=1200&aspectRatio=1.78&format=webp);">
+    <div class="container">
+      <h1><%= @list.name %></h1>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="cards">
+          <% @list.bookmarks.each do |bookmark| %>
+            <%= render 'bookmarks/card', bookmark: bookmark %>
+          <% end %>
+        </div>
+        <div class="my-3">
+          <%= render 'bookmarks/form' %>
+        </div>
+      </div>
+      <%= link_to root_path, class: "btn btn-primary mt-3" do %>
+        <i class="fa-solid fa-house"></i>
+      <% end %>
+    </div>
   </div>
 </div>
-<%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
