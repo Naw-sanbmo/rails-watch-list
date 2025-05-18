@@ -9,7 +9,7 @@
 <div class="container mt-3">
   <div class="cards">
     <% @lists.each do |list| %>
-      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
+      <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://cimg.kgl-systems.io/camion/files/famitsu/8657/58414e57bfcf8f48a14e8afe5660adf9.jpg?x=767') %>)">
         <%= link_to list.name, list_path(list), class:'text-decoration-none text-white' %>
         <p class="x"><%= link_to "X", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure"}, class:'text-decoration-none' %> </p>
       </div>

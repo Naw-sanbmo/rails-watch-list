@@ -8,6 +8,7 @@
       <h2><%= bookmark.movie.title %></h2>
       <p><%= bookmark.movie.overview %></p>
       <h2><%= bookmark.comment %></h2>
+      <p>Rating <%= '⭐️' * bookmark.movie.rating.round%></p>
     </div>
   </div>
 </div>
